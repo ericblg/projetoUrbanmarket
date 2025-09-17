@@ -4,23 +4,23 @@ body {
 }
 
 /* ---- CLASSE HEADER ---- */
-.header {
+header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.header img {
+header img {
     margin: 20px 20px;
 }
 
-.header input {
+header input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
-.header a {
+header a {
     text-decoration: none;
 }
 
