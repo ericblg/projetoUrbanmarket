@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* ---- CLASSE HEADER ---- */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header img {
+    margin: 20px 20px;
+}
+
+.header input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+/* ---- CLASSE HOME ---- */
+
+.home {
+    background-color: #d9d9d9;
+    min-height: 100vh;
+}
+
+.home ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.home li {
+    position: relative;
+    margin-right: 15px;
+    display: flex;
+    margin: 10px auto;
+}
+
+.home a {
+    text-decoration: none;
+    padding: 6px 10px;
+    display: inline-block;
+    color: #222;
+    transition: background 0.3s;
+}
+
+.home a:hover {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.home ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.home li:hover>ul {
+    display: block;
+    opacity: 1;
+}
+
+.home h2{
+    padding: 6px 10px;
+    display: inline-block;
+    box-shadow: 0 2px 2px #666;
+    background-color: white;
+}
+
+.home h2:hover{
+    padding: 6px 10px;
+    display: inline-block;
+    transition: background 0.2s;
+    box-shadow: 0 2px 2px #666;
+    background-color: white;
+    position: relative;
+    top: -2px;
+}
