@@ -3,91 +3,111 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-/* ---- CLASSE HEADER ---- */
+/* Header */
 header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
 }
 
 header img {
-    margin: 20px 20px;
+    height: 40px;
 }
 
 header input {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
-header a {
-    text-decoration: none;
+header div {
+    display: flex;
+    gap: 15px;
 }
 
-/* ---- CLASSE HOME ---- */
+header div img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
 
-.home {
+header div img:hover {
+    transform: scale(1.1);
+}
+
+/* Menu de navegação */
+nav {
     background-color: #d9d9d9;
-    min-height: 100vh;
+    padding: 10px 0;
 }
 
-.home ul {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: space-around; /* Distribui igualmente */
+    width: 100%;
 }
 
-.home li {
+nav li {
     position: relative;
-    margin-right: 15px;
-    display: flex;
-    margin: 10px auto;
+    text-align: center; /* Centraliza o texto */
 }
 
-.home a {
+nav a {
     text-decoration: none;
     padding: 6px 10px;
     display: inline-block;
     color: #222;
-    transition: background 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.home a:hover {
+nav a:hover {
     background: #f0f0f0;
     border-radius: 4px;
 }
 
-.home ul ul {
+nav ul ul {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    background: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
     padding: 6px;
     border-radius: 6px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000;
 }
 
-.home li:hover>ul {
-    display: block;
-    opacity: 1;
+nav li:hover ul {
+    display: flex;
 }
 
-.home h2{
+/* Conteúdo principal */
+main {
+    background-color: #d9d9d9;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+h2 {
     padding: 6px 10px;
-    display: inline-block;
-    box-shadow: 0 2px 2px #666;
     background-color: white;
+    box-shadow: 0 2px 2px #666;
+    display: inline-block;
 }
 
-.home h2:hover{
-    padding: 6px 10px;
-    display: inline-block;
-    transition: background 0.2s;
-    box-shadow: 0 2px 2px #666;
-    background-color: white;
+h2:hover {
     position: relative;
     top: -2px;
 }
