@@ -105,6 +105,13 @@ h2 {
     background-color: white;
     box-shadow: 0 2px 2px #666;
     display: inline-block;
+    text-align: center;
+}
+h2 img {
+    height: 100px;
+    margin-right: 8px;
+    display: block;
+    margin: 0 auto 8px auto
 }
 
 h2:hover {
