@@ -118,3 +118,23 @@ h2:hover {
     position: relative;
     top: -2px;
 }
+
+.rodape-colunas{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+}
+
+
+a{
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
