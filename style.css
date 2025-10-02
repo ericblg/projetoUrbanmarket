@@ -168,3 +168,21 @@ footer {
     color: #ccc;
     font-size: 14px;
 }
+
+/*--------------------------login--------------------------*/
+.icones-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icones-header a img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icones-header a img:hover {
+    transform: scale(1.1);
+}
