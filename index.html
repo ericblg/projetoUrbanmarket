@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Linkando o Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <title>UrbanMarket</title>
 </head>
 
@@ -56,26 +58,52 @@
         </ul>
     </nav>
     <main>
-        <div>
-            <a href="Catalog Itens/AirFrayer.html">
-                <h2><img src="img/Catalog Itens/air.png" alt="">Airfryer samsung R$250</h2>
-            </a>
-            <a href="Catalog Itens/Moto.html">
-                <h2><img src="img/Catalog Itens/Moto.jpg" alt="">Moto Honda R$15.260</h2>
-            </a>
-            <a href="Catalog Itens/Bolo.html">
-                <h2><img src="img/Catalog Itens/bolo-de-chocolate-simples.jpg" alt="">Dinha bolos R$60</h2>
-            </a>
-            <a href="Catalog Itens/Notebook.html">
-                <h2><img src="img/Catalog Itens/notebook.png" alt="">Notebook i5 R$2.850</h2>
-            </a>
-            <a href="Catalog Itens/whey.html">
-                <h2><img src="img/Catalog Itens/Whey.png" alt="">Whey R$94,99</h2>
-            </a>
-        </div>
+        <div class="container swiper">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <a href="Catalog Itens/AirFrayer.html" class="card-link">
+                            <img src="img/Catalog Itens/air.png" alt="Card image" class="card-image">
+                            <h2 class="card-title">AirFrayer Samsung R$250</h2>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="Catalog Itens/Moto.html" class="card-link">
+                            <img src="img/Catalog Itens/Moto.jpg" alt="Card image" class="card-image">
+                            <h2 class="card-title">Moto Honda R$15.850</h2>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="Catalog Itens/Bolo.html" class="card-link">
+                            <img src="img/Catalog Itens/bolo-de-chocolate-simples.jpg" alt="Card image"
+                                class="card-image">
+                            <h2 class="card-title">Dinha Bolos R$60</h2>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="Catalog Itens/Notebook.html" class="card-link">
+                            <img src="img/Catalog Itens/notebook.png" alt="Card image" class="card-image">
+                            <h2 class="card-title">Noteboo core i5 R$2.320</h2>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="Catalog Itens/whey.html" class="card-link">
+                            <img src="img/Catalog Itens/Whey.png" alt="Card image" class="card-image">
+                            <h2 class="card-title">Whey Protein R$79,99</h2>
+                        </a>
+                    </li>
 
+                </ul>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
         </div>
-        </div>
+        <!-- Linkando o swiper.JS script -->    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="script.js"></script>
 
     </main>
     <footer>
