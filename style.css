@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-    
 }
 
 body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* --------------------------Header-------------------------- */
+/* --------------------------HEADER-------------------------- */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     height: 80px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 header img {
@@ -29,31 +29,49 @@ header img {
 }
 
 header input {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
+    position: static;
+    width: 100%;
+    max-width: 400px;
     padding: 8px;
+    margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
-header div {
+.icones-header {
     display: flex;
     gap: 15px;
 }
 
-header div img {
+.icones-header img {
     width: 32px;
     height: 32px;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-header div img:hover {
+.icones-header img:hover {
     transform: scale(1.1);
 }
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    
+    header input {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .icones-header {
+        margin-top: 10px;
+    }
+}
 
-/* --------------------------Menu de navegação-------------------------- */
+/* --------------------------MENU DE NAVEGAÇÃO-------------------------- */
 nav {
     background-color: #d9d9d9;
     padding: 10px 0;
@@ -98,31 +116,50 @@ nav ul ul {
     border-radius: 6px;
     flex-direction: column;
     min-width: 150px;
+    z-index: 1000;
 }
 
 nav li:hover ul {
     display: flex;
 }
 
-/* --------------------------Main-------------------------- */
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(#ffffff, #ffffff);
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    nav li {
+        width: 100%;
+    }
+    
+    nav ul ul {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
 }
+
+/* --------------------------MAIN-------------------------- */
+main {
+    flex: 1;
+    padding: 10px;
+    background-color: #d9d9d9;
+    min-height: auto;
+}
+
 .card-wrapper {
     max-width: 1100px;
-    margin: 0 60px  15px;
+    margin: 0 60px 15px;
     padding: 0 20px 10px;
     overflow: hidden;
 }
 
-.card-list .card-item{
+.card-list .card-item {
     list-style: none;
 }
-.card-list .card-item .card-link{
+
+.card-list .card-item .card-link {
     user-select: none;
     display: block;
     background: #e6e3e3;
@@ -141,40 +178,26 @@ main {
 .card-list .card-item .card-link:hover {
     border-color: #000;
 }
-.card-list .card-link .card-image{
+
+.card-list .card-link .card-image {
     width: 250px;
     border-radius: 10px;
 }
-.card-list .card-link .card-title{
+
+.card-list .card-link .card-title {
     font-size: 1.1rem;
     color: #000;
-    font-weight: 600;   
-}
-.card-list .card-link .card-button{
-    height: 35px;
-    width: 35px;
-    color: #000;
-    border-radius: 50%;
-    margin: 30px 0 5px;
-    background: none;
-    cursor: pointer;
-    border: 2px solid #000;
-
+    font-weight: 600;
 }
 
-.card-list .card-link:hover .card-button{
-    color: #fff;
-    background: #5372f0;
-}
-
-.card-wrapper .swiper-pagination-bullet{
+.card-wrapper .swiper-pagination-bullet {
     height: 13px;
     width: 13px;
     opacity: 0.5;
     background: #7c0606;
 }
 
-.card-wrapper .swiper-pagination-bullet-active{
+.card-wrapper .swiper-pagination-bullet-active {
     opacity: 1;
 }
 
@@ -183,7 +206,7 @@ main {
     margin-top: -35px;
 }
 
-@media screen and (max-width:768px) { 
+@media screen and (max-width: 768px) {
     .card-wrapper {
         margin: 0 10px 25px;
     }
@@ -193,8 +216,7 @@ main {
     }
 }
 
-
-/* --------------------------Footer-------------------------- */
+/* --------------------------FOOTER-------------------------- */
 footer {
     background-color: #333;
     color: #fff;
@@ -220,7 +242,8 @@ footer {
     font-size: 18px;
 }
 
-.footerConteudo p, .footerConteudo a {
+.footerConteudo p,
+.footerConteudo a {
     color: #ccc;
     margin-bottom: 8px;
     display: block;
@@ -240,20 +263,10 @@ footer {
     font-size: 14px;
 }
 
-/*--------------------------login--------------------------*/
-.icones-header {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.icones-header a img {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.icones-header a img:hover {
-    transform: scale(1.1);
+@media screen and (max-width: 768px) {
+    .footerContainer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
