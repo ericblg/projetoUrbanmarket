@@ -53,19 +53,20 @@ header input {
 .icones-header img:hover {
     transform: scale(1.1);
 }
+
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
         height: auto;
         padding: 15px 20px;
     }
-    
+
     header input {
         order: 3;
         width: 100%;
         margin-top: 10px;
     }
-    
+
     .icones-header {
         margin-top: 10px;
     }
@@ -128,11 +129,11 @@ nav li:hover ul {
         flex-direction: column;
         gap: 5px;
     }
-    
+
     nav li {
         width: 100%;
     }
-    
+
     nav ul ul {
         position: static;
         transform: none;
@@ -143,9 +144,13 @@ nav li:hover ul {
 /* --------------------------MAIN-------------------------- */
 main {
     flex: 1;
-    padding: 10px;
+    padding: 100px;
     background-color: #d9d9d9;
     min-height: auto;
+
+
+
+
 }
 
 .card-wrapper {
@@ -161,7 +166,18 @@ main {
 
 .card-list .card-item .card-link {
     user-select: none;
-    display: block;
+    display: flex;
+    /* organiza conteúdo */
+    flex-direction: column;
+    /* imagem em cima, texto embaixo */
+    justify-content: space-between;
+    align-items: center;
+
+    width: 260px;
+    /* largura fixa */
+    height: 340px;
+    /* altura fixa */
+
     background: #e6e3e3;
     padding: 10px;
     border-radius: 12px;
@@ -180,7 +196,12 @@ main {
 }
 
 .card-list .card-link .card-image {
-    width: 250px;
+    width: 100%;
+    /* ocupa largura do card */
+    height: 200px;
+    /* altura fixa */
+    object-fit: cover;
+    /* corta sem distorcer */
     border-radius: 10px;
 }
 
@@ -188,6 +209,10 @@ main {
     font-size: 1.1rem;
     color: #000;
     font-weight: 600;
+}
+.card-wrapper .swiper-pagination {
+    position: relative;   /* deixa relativo ao container */
+    margin-top: 25px;     /* aumenta espaço entre os cards e as bolinhas */
 }
 
 .card-wrapper .swiper-pagination-bullet {
@@ -199,6 +224,7 @@ main {
 
 .card-wrapper .swiper-pagination-bullet-active {
     opacity: 1;
+    
 }
 
 .card-wrapper .swiper-slide-button {
