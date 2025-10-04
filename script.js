@@ -1,6 +1,9 @@
+// SWIPER CARROSSEL CENTRALIZADO
 new Swiper('.card-wrapper', {
   loop: true,
   spaceBetween: 30,
+  centeredSlides: true, // Centraliza o slide ativo
+  slidesPerView: 'auto', // Ajusta automaticamente
 
   // pagination bullets 
   pagination: {
@@ -18,13 +21,16 @@ new Swiper('.card-wrapper', {
   // BreakPoint Responsivo 
   breakpoints: {
     0: {
-        slidesPerView: 1
+        slidesPerView: 1,
+        centeredSlides: true
     },
     768: {
-        slidesPerView: 3
+        slidesPerView: 2,
+        centeredSlides: false
     },
     1024: {
-        slidesPerView: 3    
+        slidesPerView: 3,
+        centeredSlides: false
     }
   }
 });
@@ -41,14 +47,16 @@ const cadastroForm = document.getElementById("cadastroForm");
 const mostrarCadastro = document.getElementById("mostrarCadastro");
 const mostrarLogin = document.getElementById("mostrarLogin");
 
+// Abrir popup de login
 abrirLogin.addEventListener("click", (e) => {
-  e.preventDefault(); // impede redirecionamento
+  e.preventDefault();
   overlay.style.display = "block";
   loginPopup.style.display = "block";
   loginForm.style.display = "block";
   cadastroForm.style.display = "none";
 });
 
+// Fechar popup
 fecharPopup.addEventListener("click", fecharTudo);
 overlay.addEventListener("click", fecharTudo);
 
@@ -56,6 +64,13 @@ function fecharTudo() {
   overlay.style.display = "none";
   loginPopup.style.display = "none";
 }
+
+// Fechar com ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    fecharTudo();
+  }
+});
 
 // Alternar Login <-> Cadastro
 mostrarCadastro.addEventListener("click", (e) => {
@@ -68,4 +83,9 @@ mostrarLogin.addEventListener("click", (e) => {
   e.preventDefault();
   cadastroForm.style.display = "none";
   loginForm.style.display = "block";
+});
+
+// Prevenir comportamento padrão nos links do formulário
+document.querySelectorAll('.formBox a').forEach(link => {
+  link.addEventListener('click', (e) => e.preventDefault());
 });

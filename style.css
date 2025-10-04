@@ -141,43 +141,48 @@ nav li:hover ul {
     }
 }
 
-/* --------------------------MAIN-------------------------- */
+/* --------------------------MAIN - CENTRALIZADO-------------------------- */
 main {
     flex: 1;
-    padding: 100px;
+    padding: 40px 20px;
     background-color: #d9d9d9;
     min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
-
-
+.container.swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .card-wrapper {
     max-width: 1100px;
-    margin: 0 60px 15px;
-    padding: 0 20px 10px;
+    margin: 0 auto;
+    padding: 20px 0;
     overflow: hidden;
+    width: 100%;
 }
 
 .card-list .card-item {
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 .card-list .card-item .card-link {
     user-select: none;
     display: flex;
-    /* organiza conteúdo */
     flex-direction: column;
-    /* imagem em cima, texto embaixo */
     justify-content: space-between;
     align-items: center;
-
     width: 260px;
-    /* largura fixa */
     height: 340px;
-    /* altura fixa */
-
     background: #e6e3e3;
     padding: 10px;
     border-radius: 12px;
@@ -185,6 +190,7 @@ main {
     border: 2px solid transparent;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
     transition: 0.2s ease;
+    margin: 0 auto;
 }
 
 .card-list .card-item .card-link:active {
@@ -193,15 +199,13 @@ main {
 
 .card-list .card-item .card-link:hover {
     border-color: #000;
+    transform: translateY(-5px);
 }
 
 .card-list .card-link .card-image {
     width: 100%;
-    /* ocupa largura do card */
     height: 200px;
-    /* altura fixa */
     object-fit: cover;
-    /* corta sem distorcer */
     border-radius: 10px;
 }
 
@@ -209,10 +213,15 @@ main {
     font-size: 1.1rem;
     color: #000;
     font-weight: 600;
+    text-align: center;
 }
+
 .card-wrapper .swiper-pagination {
-    position: relative;   /* deixa relativo ao container */
-    margin-top: 25px;     /* aumenta espaço entre os cards e as bolinhas */
+    position: relative;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-wrapper .swiper-pagination-bullet {
@@ -224,7 +233,6 @@ main {
 
 .card-wrapper .swiper-pagination-bullet-active {
     opacity: 1;
-    
 }
 
 .card-wrapper .swiper-slide-button {
@@ -232,13 +240,50 @@ main {
     margin-top: -35px;
 }
 
+/* SWIPER CENTRALIZADO */
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 768px) {
+    main {
+        padding: 20px 10px;
+    }
+    
     .card-wrapper {
         margin: 0 10px 25px;
+        padding: 10px 0;
     }
-
+    
+    .card-list .card-item .card-link {
+        width: 220px;
+        height: 300px;
+    }
+    
+    .card-list .card-link .card-image {
+        height: 160px;
+    }
+    
     .card-wrapper .swiper-slide-button {
         display: none;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .card-wrapper {
+        max-width: 1300px;
     }
 }
 
@@ -297,7 +342,6 @@ footer {
     }
 }
 
-
 /*--------------------------LOGIN--------------------------*/
 
 /* Overlay transparente */
@@ -328,7 +372,7 @@ footer {
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   position: relative;
-  animation: fadeSlide 0.3s ease; /* animação só aqui */
+  animation: fadeSlide 0.3s ease;
 }
 
 .formBox h2 {
@@ -386,10 +430,8 @@ footer {
   color: #333;
 }
 
-/* Animação suave (sem teleporte) */
+/* Animação suave */
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-
