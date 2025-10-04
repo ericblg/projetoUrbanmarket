@@ -270,3 +270,100 @@ footer {
         gap: 20px;
     }
 }
+
+
+/*--------------------------LOGIN--------------------------*/
+
+/* Overlay transparente */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+/* Container central fixo */
+#loginPopup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Conteúdo do login/cadastro */
+.loginContent {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeSlide 0.3s ease; /* animação só aqui */
+}
+
+.formBox h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.formBox form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formBox form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #7c0606;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formBox form button:hover {
+  background: #a00808;
+}
+
+.formBox p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.formBox a {
+  color: #7c0606;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formBox a:hover {
+  text-decoration: underline;
+}
+
+/* Botão fechar (X) */
+#fecharPopup {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Animação suave (sem teleporte) */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

@@ -17,7 +17,7 @@
         <input type="text" placeholder="Pesquisar...">
 
         <div class="icones-header">
-            <a href="login.html">
+            <a href="#" id="abrirLogin">
                 <img src="/img/login.png" alt="Login">
             </a>
             <a href="favoritos.html">
@@ -28,7 +28,37 @@
             </a>
         </div>
     </header>
+    <!-- Overlay e popup de login -->
+    <div id="overlay"></div>
 
+    <div id="loginPopup">
+        <div class="loginContent">
+            <span id="fecharPopup">&times;</span>
+
+            <!-- Área de login -->
+            <div class="formBox" id="loginForm">
+                <h2>Entrar</h2>
+                <form>
+                    <input type="text" placeholder="Usuário" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Não tem conta? <a href="#" id="mostrarCadastro">Criar conta</a></p>
+            </div>
+
+            <!-- Área de cadastro -->
+            <div class="formBox" id="cadastroForm" style="display:none;">
+                <h2>Criar conta</h2>
+                <form>
+                    <input type="text" placeholder="Usuário" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+                <p>Já tem conta? <a href="#" id="mostrarLogin">Entrar</a></p>
+            </div>
+        </div>
+    </div>
     <nav>
         <ul>
             <li><a href="#">Roupas</a></li>
@@ -53,7 +83,7 @@
             <li><a href="#">Auto</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <div class="container swiper">
             <div class="card-wrapper">
@@ -72,7 +102,8 @@
                     </li>
                     <li class="card-item swiper-slide">
                         <a href="Catalog Itens/Bolo.html" class="card-link">
-                            <img src="img/Catalog Itens/bolo-de-chocolate-simples.jpg" alt="Card image" class="card-image">
+                            <img src="img/Catalog Itens/bolo-de-chocolate-simples.jpg" alt="Card image"
+                                class="card-image">
                             <h2 class="card-title">Dinha Bolos R$60</h2>
                         </a>
                     </li>
@@ -95,16 +126,17 @@
                 <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <script src="script.js"></script>
     </main>
-    
+
     <footer>
         <div class="footerContainer">
             <div class="footerConteudo">
                 <h4>Sobre nós</h4>
-                <p>UrbanMarket - Sua loja online de confiança. Oferecemos os melhores produtos com qualidade e preços acessíveis.</p>
+                <p>UrbanMarket - Sua loja online de confiança. Oferecemos os melhores produtos com qualidade e preços
+                    acessíveis.</p>
             </div>
             <div class="footerConteudo">
                 <h4>Contato</h4>
@@ -123,4 +155,5 @@
         </div>
     </footer>
 </body>
+
 </html>
