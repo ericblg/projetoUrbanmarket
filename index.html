@@ -26,6 +26,7 @@
             <a href="carrinho.html">
                 <img src="img/carrinho.png" alt="Carrinho">
             </a>
+            <button id="toggleTheme" class="theme-toggle" aria-label="Modo escuro">🌙</button>
         </div>
     </header>
     <!-- Overlay e popup de login -->
@@ -60,6 +61,7 @@
         </div>
     </div>
     <nav>
+        <div class="nav-inner">
         <ul>
             <li><a href="#">Roupas</a></li>
             <li>
@@ -82,6 +84,7 @@
             <li><a href="#">Esportes</a></li>
             <li><a href="#">Auto</a></li>
         </ul>
+        </div>
     </nav>
 
     <main>
@@ -126,6 +129,67 @@
                 <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
+
+        <!-- Seção estilo marketplace com grid simples -->
+        <section class="secao-produtos">
+            <h2>Ofertas para você</h2>
+            <div class="grid-produtos">
+                <a class="produto-card" href="Catalog Itens/AirFrayer.html">
+                    <img class="produto-img" src="img/Catalog Itens/air.png" alt="AirFryer Samsung">
+                    <div class="produto-titulo">AirFryer Samsung</div>
+                    <div class="produto-preco">R$ 250,00</div>
+                    <div class="produto-badges">
+                      <span class="badge-frete">Frete grátis</span>
+                    </div>
+                    <div class="produto-parcela">em até 5x de R$ 50,00 sem juros</div>
+                    <div class="produto-vista">R$ 240,00 à vista no Pix</div>
+                </a>
+                <a class="produto-card" href="Catalog Itens/Moto.html">
+                    <img class="produto-img" src="img/Catalog Itens/Moto.jpg" alt="Moto Honda">
+                    <div class="produto-titulo">Moto Honda</div>
+                    <div class="produto-preco">R$ 15.850,00</div>
+                    <div class="produto-badges">
+                      <span class="badge-frete">Frete grátis</span>
+                    </div>
+                    <div class="produto-parcela">em até 12x de R$ 1.320,83 sem juros</div>
+                    <div class="produto-vista">R$ 15.500,00 à vista no Pix</div>
+                </a>
+                <a class="produto-card" href="Catalog Itens/Bolo.html">
+                    <img class="produto-img" src="img/Catalog Itens/bolo-de-chocolate-simples.jpg" alt="Bolo de Chocolate">
+                    <div class="produto-titulo">Bolo de Chocolate</div>
+                    <div class="produto-preco">R$ 60,00</div>
+                    <div class="produto-parcela">em até 3x de R$ 20,00 sem juros</div>
+                    <div class="produto-vista">R$ 55,00 à vista</div>
+                </a>
+                <a class="produto-card" href="Catalog Itens/Notebook.html">
+                    <img class="produto-img" src="img/Catalog Itens/notebook.png" alt="Notebook i5">
+                    <div class="produto-titulo">Notebook Core i5</div>
+                    <div class="produto-preco">R$ 2.320,00</div>
+                    <div class="produto-badges">
+                      <span class="badge-frete">Frete grátis</span>
+                    </div>
+                    <div class="produto-parcela">em até 10x de R$ 232,00 sem juros</div>
+                    <div class="produto-vista">R$ 2.199,00 à vista no Pix</div>
+                </a>
+                <a class="produto-card" href="Catalog Itens/whey.html">
+                    <img class="produto-img" src="img/Catalog Itens/Whey.png" alt="Whey Protein">
+                    <div class="produto-titulo">Whey Protein 900g</div>
+                    <div class="produto-preco">R$ 79,99</div>
+                    <div class="produto-parcela">em até 4x de R$ 20,00 sem juros</div>
+                    <div class="produto-vista">R$ 74,99 à vista</div>
+                </a>
+                <a class="produto-card" href="#">
+                    <img class="produto-img" src="img/Catalog Itens/notebook.png" alt="Oferta Genérica">
+                    <div class="produto-titulo">Oferta Genérica</div>
+                    <div class="produto-preco">R$ 199,99</div>
+                    <div class="produto-badges">
+                      <span class="badge-frete">Frete grátis</span>
+                    </div>
+                    <div class="produto-parcela">em até 10x de R$ 20,00 sem juros</div>
+                    <div class="produto-vista">R$ 189,90 à vista</div>
+                </a>
+            </div>
+        </section>
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <script src="script.js"></script>

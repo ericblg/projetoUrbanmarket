@@ -89,3 +89,52 @@ mostrarLogin.addEventListener("click", (e) => {
 document.querySelectorAll('.formBox a').forEach(link => {
   link.addEventListener('click', (e) => e.preventDefault());
 });
+
+/* THEME / DARK MODE */
+(function() {
+  const btn = document.getElementById('toggleTheme');
+  const storageKey = 'um-theme';
+
+  // Apply saved theme
+  try {
+    const saved = localStorage.getItem(storageKey);
+    if (saved === 'dark') {
+      document.body.classList.add('dark');
+    }
+  } catch (e) {
+    // ignore storage errors
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      try {
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+      } catch (e) {}
+      // Optional: update icon/text
+      if (document.body.classList.contains('dark')) {
+        btn.textContent = '☀️';
+        btn.setAttribute('aria-label', 'Modo claro');
+      } else {
+        btn.textContent = '🌙';
+        btn.setAttribute('aria-label', 'Modo escuro');
+      }
+    });
+
+    // Set initial icon/text
+    if (document.body.classList.contains('dark')) {
+      btn.textContent = '☀️';
+      btn.setAttribute('aria-label', 'Modo claro');
+    } else {
+      btn.textContent = '🌙';
+      btn.setAttribute('aria-label', 'Modo escuro');
+    }
+  }
+  // Sombra do header ao rolar
+  function updateScrolled() {
+    document.body.classList.toggle('scrolled', window.scrollY > 4);
+  }
+  window.addEventListener('scroll', updateScrolled, { passive: true });
+  updateScrolled();
+})();
