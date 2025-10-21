@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Seu carrinho - UrbanMarket</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="img/carrinho.png">
+  <style>
+    /* Apenas pequenos ajustes específicos */
+    .titulo-pagina { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="img/Screenshot_5.png" alt="Logo">
+    </a>
+    <input type="text" placeholder="Pesquisar...">
+    <div class="icones-header">
+      <a href="#" id="abrirLogin">
+        <img src="img/login.png" alt="Login">
+      </a>
+      <a href="#favoritos">
+        <img src="img/favoritos.png" alt="Favoritos">
+      </a>
+      <a href="carrinho.html">
+        <img src="img/carrinho.png" alt="Carrinho">
+      </a>
+      <button id="toggleTheme" class="theme-toggle" aria-label="Modo escuro">🌙</button>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+    <ul>
+      <li><a href="#">Roupas</a></li>
+      <li>
+        <a href="#">Saúde</a>
+        <ul>
+          <li><a href="#">Academia</a></li>
+          <li><a href="#">Desenvolvimento</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Eletrônicos</a>
+        <ul>
+          <li><a href="#">Placa de Vídeo</a></li>
+          <li><a href="#">Memória RAM</a></li>
+          <li><a href="#">Celular</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Casa</a></li>
+      <li><a href="#">Esportes</a></li>
+      <li><a href="#">Auto</a></li>
+    </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="carrinho-container">
+      <h1 class="titulo-pagina">Seu carrinho</h1>
+      <div class="carrinho-conteudo">
+        <!-- Lista de itens -->
+        <section class="carrinho-itens">
+          <div class="carrinho-item">
+            <img class="carrinho-thumb" src="img/Catalog Itens/air.png" alt="AirFryer">
+            <div class="carrinho-detalhes">
+              <div class="carrinho-titulo">AirFryer Samsung</div>
+              <div class="carrinho-meta">Vendido por UrbanStore • Cor: Preta</div>
+              <div class="carrinho-acoes">
+                <label>Qtd:
+                  <input class="qtd-input" type="number" min="1" value="1">
+                </label>
+                <a href="#" class="link-remover">Remover</a>
+              </div>
+            </div>
+            <div class="preco">R$ 250,00</div>
+          </div>
+
+          <div class="carrinho-item">
+            <img class="carrinho-thumb" src="img/Catalog Itens/Whey.png" alt="Whey Protein">
+            <div class="carrinho-detalhes">
+              <div class="carrinho-titulo">Whey Protein 900g</div>
+              <div class="carrinho-meta">Vendido por FitLife • Sabor: Chocolate</div>
+              <div class="carrinho-acoes">
+                <label>Qtd:
+                  <input class="qtd-input" type="number" min="1" value="2">
+                </label>
+                <a href="#" class="link-remover">Remover</a>
+              </div>
+            </div>
+            <div class="preco">R$ 79,99</div>
+          </div>
+        </section>
+
+        <!-- Resumo -->
+        <aside class="resumo-compra">
+          <div class="resumo-linha"><span>Subtotal</span><strong>R$ 409,99</strong></div>
+          <div class="resumo-linha"><span>Entrega</span><span>A calcular</span></div>
+
+          <input class="cupom-input" type="text" placeholder="Adicionar cupom de desconto">
+
+          <div class="resumo-total">
+            <div class="resumo-linha"><span>Total</span><strong>R$ 409,99</strong></div>
+          </div>
+
+          <button class="btn-principal">Finalizar compra</button>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footerContainer">
+      <div class="footerConteudo">
+        <h4>Sobre nós</h4>
+        <p>UrbanMarket - Sua loja online de confiança. Oferecemos os melhores produtos com qualidade e preços acessíveis.</p>
+      </div>
+      <div class="footerConteudo">
+        <h4>Contato</h4>
+        <p>Email: contato@urbanmarket.com</p>
+        <p>Telefone: (11) 9999-9999</p>
+      </div>
+      <div class="footerConteudo">
+        <h4>Links úteis</h4>
+        <a href="#">Política de privacidade</a>
+        <a href="#">Termos de uso</a>
+        <a href="#">Ajuda</a>
+      </div>
+    </div>
+    <div class="footerFinal">
+      <p>UrbanMarket. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Reaproveita popup/overlay para manter consistência visual -->
+  <div id="overlay"></div>
+  <div id="loginPopup">
+    <div class="loginContent">
+      <span id="fecharPopup">&times;</span>
+
+      <div class="formBox" id="loginForm">
+        <h2>Entrar</h2>
+        <form>
+          <input type="text" placeholder="Usuário" required>
+          <input type="password" placeholder="Senha" required>
+          <button type="submit">Login</button>
+        </form>
+        <p>Não tem conta? <a href="#" id="mostrarCadastro">Criar conta</a></p>
+      </div>
+
+      <div class="formBox" id="cadastroForm" style="display:none;">
+        <h2>Criar conta</h2>
+        <form>
+          <input type="text" placeholder="Usuário" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Senha" required>
+          <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem conta? <a href="#" id="mostrarLogin">Entrar</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="favoritos" class="aba-favoritos">
+    <a href="#" class="fechar">✖</a>
+    <h3>⭐ Meus Favoritos</h3>
+    <p class="mensagem-vazia">Você ainda não adicionou nenhum favorito.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
