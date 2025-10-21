@@ -5,14 +5,14 @@ new Swiper('.card-wrapper', {
   centeredSlides: true, // Centraliza o slide ativo
   slidesPerView: 'auto', // Ajusta automaticamente
 
-  // pagination bullets 
+  // Paginação (bolinhas)
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
     dynamicBullets: true,
   },
 
-  // Navigation arrows
+  // Setas de navegação
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -90,19 +90,19 @@ document.querySelectorAll('.formBox a').forEach(link => {
   link.addEventListener('click', (e) => e.preventDefault());
 });
 
-/* THEME / DARK MODE */
+/* TEMA / MODO ESCURO */
 (function() {
   const btn = document.getElementById('toggleTheme');
   const storageKey = 'um-theme';
 
-  // Apply saved theme
+  // Aplicar tema salvo
   try {
     const saved = localStorage.getItem(storageKey);
     if (saved === 'dark') {
       document.body.classList.add('dark');
     }
   } catch (e) {
-    // ignore storage errors
+    // Ignorar erros de armazenamento
   }
 
   if (btn) {
@@ -112,7 +112,7 @@ document.querySelectorAll('.formBox a').forEach(link => {
         const isDark = document.body.classList.contains('dark');
         localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
       } catch (e) {}
-      // Optional: update icon/text
+      // Opcional: atualizar ícone/texto
       if (document.body.classList.contains('dark')) {
         btn.textContent = '☀️';
         btn.setAttribute('aria-label', 'Modo claro');
@@ -122,7 +122,7 @@ document.querySelectorAll('.formBox a').forEach(link => {
       }
     });
 
-    // Set initial icon/text
+    // Definir ícone/texto inicial
     if (document.body.classList.contains('dark')) {
       btn.textContent = '☀️';
       btn.setAttribute('aria-label', 'Modo claro');
@@ -131,7 +131,7 @@ document.querySelectorAll('.formBox a').forEach(link => {
       btn.setAttribute('aria-label', 'Modo escuro');
     }
   }
-  // Sombra do header ao rolar
+  // Sombra do cabeçalho ao rolar
   function updateScrolled() {
     document.body.classList.toggle('scrolled', window.scrollY > 4);
   }

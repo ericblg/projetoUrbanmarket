@@ -14,7 +14,7 @@ body {
     color: #222; /* texto padrão no tema claro */
 }
 
-/* --------------------------THEME / DARK MODE-------------------------- */
+/* --------------------------TEMA / MODO ESCURO-------------------------- */
 .theme-toggle {
     background: #f2f2f2;
     border: 1px solid #cfcfcf;
@@ -28,7 +28,7 @@ body {
     background: #e7e7e7;
 }
 
-/* Dark theme overrides */
+/* Ajustes do tema escuro */
 body.dark {
     color: #eaeaea;
 }
@@ -45,7 +45,7 @@ body.dark .theme-toggle {
     color: #eaeaea;
 }
 
-/* --------------------------HEADER-------------------------- */
+/* --------------------------CABEÇALHO-------------------------- */
 header {
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@ header input {
 }
 header input::placeholder { color: #777; }
 
-/* Dark mode for header */
+/* Modo escuro para o cabeçalho */
 body.dark header {
     background: #121212;
     border-bottom-color: #2b2b2b;
@@ -99,7 +99,7 @@ body.dark header input { background: #1f1f1f; color: #eee; border-color: #3a3a3a
     transition: transform 0.2s ease;
 }
 
-/* Make header icons visible on dark backgrounds */
+/* Deixa os ícones do cabeçalho visíveis em fundos escuros */
 body.dark .icones-header img { filter: invert(1) brightness(1.2); }
 
 /* Sombra ao rolar a página */
@@ -170,7 +170,7 @@ nav a {
     color: #333;
     width: 100%;
     box-sizing: border-box;
-    text-transform: uppercase; /* uppercase leve */
+    text-transform: uppercase; /* maiúsculas leves */
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -193,7 +193,7 @@ body.dark nav a[aria-current="page"] {
     background: #2a2a2a;
 }
 
-/* Submenu sem uppercase para legibilidade */
+/* Submenu sem maiúsculas para legibilidade */
 nav ul ul a {
     text-transform: none;
     font-size: 14px;
@@ -258,20 +258,20 @@ nav li:hover ul {
     }
 }
 
-/* --------------------------MAIN - CENTRALIZADO-------------------------- */
+/* --------------------------PRINCIPAL - CENTRALIZADO-------------------------- */
 main {
     flex: 1;
     padding: 40px 20px;
     background-color: #d9d9d9;
     min-height: auto;
     display: flex;
-    flex-direction: column; /* empilha conteúdo */
-    justify-content: flex-start; /* começa do topo */
+    flex-direction: column; /* empilha o conteúdo */
+    justify-content: flex-start; /* inicia do topo */
     align-items: center; /* centraliza horizontalmente */
-    gap: 20px; /* espaço entre carrossel e ofertas */
+    gap: 20px; /* espaço entre o carrossel e as ofertas */
 }
 
-/* Dark mode for main area */
+/* Modo escuro para a área principal */
 body.dark main {
     background-color: #181818;
 }
@@ -424,7 +424,7 @@ body.dark .card-wrapper .swiper-slide-button {
     }
 }
 
-/* --------------------------FOOTER-------------------------- */
+/* --------------------------RODAPÉ-------------------------- */
 footer {
     background-color: #333;
     color: #fff;
@@ -481,7 +481,7 @@ footer {
 
 /*--------------------------LOGIN--------------------------*/
 
-/* Overlay transparente */
+/* Sobreposição (overlay) transparente */
 #overlay {
   display: none;
   position: fixed;
@@ -491,7 +491,7 @@ footer {
   z-index: 999;
 }
 
-/* Container central fixo */
+/* Contêiner central fixo */
 #loginPopup {
   display: none;
   position: fixed;
@@ -500,7 +500,7 @@ footer {
   z-index: 1000;
 }
 
-/* Conteúdo do login/cadastro */
+/* Conteúdo das telas de login/cadastro */
 .loginContent {
   background: #fff;
   padding: 30px;
@@ -574,7 +574,7 @@ body.dark .formBox form input {
   text-decoration: underline;
 }
 
-/* Botão fechar (X) */
+/* Botão de fechar (X) */
 #fecharPopup {
   position: absolute;
   top: 10px; right: 15px;
@@ -640,7 +640,7 @@ body.dark .aba-favoritos .fechar {
   font-style: italic;
 }
 
-/* --------------------------CARRINHO (cart)-------------------------- */
+/* --------------------------CARRINHO-------------------------- */
 .carrinho-container {
   width: 100%;
   max-width: 1200px;
@@ -770,7 +770,7 @@ body.dark .aba-favoritos .fechar {
 
 .btn-principal:hover { background: #a00808; }
 
-/* Dark variants for cart */
+/* Variações escuras para o carrinho */
 body.dark .carrinho-itens,
 body.dark .resumo-compra {
   background: #1f1f1f;
@@ -791,10 +791,10 @@ body.dark .preco { color: #f5f5f5; }
 body.dark .resumo-linha span, body.dark .resumo-linha strong { color: #ddd; }
 body.dark .cupom-input { background: #2a2a2a; border-color: #444; color: #eee; }
 body.dark .cupom-input::placeholder { color: #9a9a9a; }
-/* Força claro quando não estiver em dark */
+/* Força o tema claro quando não estiver no modo escuro */
 body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc; }
 
-/* --------------------------GRID DE PRODUTOS-------------------------- */
+/* --------------------------GRADE DE PRODUTOS-------------------------- */
 .secao-produtos {
   width: 100%;
   max-width: 1200px;
@@ -850,10 +850,10 @@ body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc
   color: #111;
 }
 
-/* Infos adicionais estilo marketplace */
+/* Informações adicionais no estilo marketplace */
 .produto-badges { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
 .badge-frete {
-  background: #00a650; /* verde ML */
+  background: #00a650; /* verde do ML */
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -876,7 +876,7 @@ body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc
 
 body.dark .produto-parcela { color: #bbb; }
 
-/* Dark variantes para a grid */
+/* Variações escuras para a grade */
 body.dark .produto-card { background: #1f1f1f; border-color: #3a3a3a; }
 body.dark .produto-img { border-color: #333; }
 body.dark .produto-titulo { color: #eee; }
