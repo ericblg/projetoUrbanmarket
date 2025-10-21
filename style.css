@@ -134,12 +134,12 @@ body.dark.scrolled header {
 
 /* --------------------------MENU DE NAVEGAÇÃO-------------------------- */
 nav {
-    background-color: #ffffff; /* estilo marketplace (claro) */
+    background-color: #ffffff;
     border-bottom: 1px solid #eee;
     padding: 10px 0;
 }
 
-/* Container central para o nav, estilo marketplace */
+/* Container central para o nav */
 .nav-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -193,7 +193,6 @@ body.dark nav a[aria-current="page"] {
     background: #2a2a2a;
 }
 
-/* Submenu sem maiúsculas para legibilidade */
 nav ul ul a {
     text-transform: none;
     font-size: 14px;
@@ -605,7 +604,7 @@ body.dark #fecharPopup {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 999;
+  z-index: 1000;
 }
 
 body.dark .aba-favoritos {
@@ -794,7 +793,7 @@ body.dark .cupom-input::placeholder { color: #9a9a9a; }
 /* Força o tema claro quando não estiver no modo escuro */
 body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc; }
 
-/* --------------------------GRADE DE PRODUTOS-------------------------- */
+/* --------------------------GRID DE PRODUTOS-------------------------- */
 .secao-produtos {
   width: 100%;
   max-width: 1200px;
@@ -853,7 +852,7 @@ body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc
 /* Informações adicionais no estilo marketplace */
 .produto-badges { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
 .badge-frete {
-  background: #00a650; /* verde do ML */
+  background: #00a650;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -876,7 +875,7 @@ body:not(.dark) .cupom-input { background: #fff; color: #222; border-color: #ccc
 
 body.dark .produto-parcela { color: #bbb; }
 
-/* Variações escuras para a grade */
+/* Variações escuras para o grid */
 body.dark .produto-card { background: #1f1f1f; border-color: #3a3a3a; }
 body.dark .produto-img { border-color: #333; }
 body.dark .produto-titulo { color: #eee; }
