@@ -168,3 +168,7 @@ window.addEventListener("load", () => {
     // ou por exemplo: "carrinho.html?cupom=DESCONTO10"
   });
 });
+
+
+
+
