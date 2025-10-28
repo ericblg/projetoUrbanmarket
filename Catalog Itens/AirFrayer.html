@@ -9,12 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- CSS do Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="prodstyle.css">
 </head>
 
 
 <body>
     <header>
-        <a href="#">
+        <a href="/index.html">
             <img src="/img/Screenshot_5.png" alt="Logo">
         </a>
         <input type="text" placeholder="Pesquisar...">
@@ -30,6 +34,7 @@
                 <img src="/img/carrinho.png" alt="Carrinho">
             </a>
         </div>
+        <button id="toggleTheme" class="theme-toggle" aria-label="Modo escuro">🌙</button>
     </header>
 
     <nav>
@@ -57,6 +62,29 @@
         </ul>
     </nav>
 
+    <main class="produto-container">
+
+        <div class="swiper produto-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/Catalog Itens/air.png" alt="AirFrayer Samsung"></div>
+                <div class="swiper-slide"><img src="../img/Catalog Itens/air.png" alt="AirFrayer Samsung 2"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="produto-info">
+            <h1>AirFrayer Samsung</h1>
+            <p class="preco">R$ 250,00</p>
+            <p>5x de R$ 50,00 sem juros</p>
+            <button class="btn-comprar">Comprar agora </button>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="prodscript.js"></script>
+
     <footer>
         <div class="footerContainer">
             <div class="footerConteudo">
@@ -81,6 +109,8 @@
             <p>UrbanMarket. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="../script.js"></script>
 </body>
 
 </html>

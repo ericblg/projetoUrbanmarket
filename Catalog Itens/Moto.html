@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- CSS do Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="prodstyle.css">
+    
 </head>
 
 <body>
     <header>
-        <a href="#">
+        <a href="/index.html">
             <img src="/img/Screenshot_5.png" alt="Logo">
         </a>
         <input type="text" placeholder="Pesquisar...">
@@ -30,6 +35,7 @@
             </a>
         </div>
     </header>
+
 
     <nav>
         <ul>
@@ -55,6 +61,34 @@
             <li><a href="#">Auto</a></li>
         </ul>
     </nav>
+
+    <main class="produto-container">
+
+        <!-- Slide de imagens -->
+        <div class="swiper produto-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/Catalog Itens/Moto.jpg" alt="Moto Honda - foto 1"></div>
+                <div class="swiper-slide"><img src="../img/Catalog Itens/Moto.jpg" alt="Moto Honda - foto 2"></div>
+                <div class="swiper-slide"><img src="../img/Catalog Itens/Moto.jpg" alt="Moto Honda - foto 3"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Informações do produto -->
+        <section class="produto-info">
+            <h1>Moto Honda 2023</h1>
+            <p class="preco">R$ 15.850,00</p>
+            <p>Parcelado em até 12x sem juros</p>
+            <button class="btn-comprar">Comprar agora</button>
+        </section>
+
+    </main>
+
+    <!-- JS do Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="prodscript.js"></script>
 
     <footer>
         <div class="footerContainer">

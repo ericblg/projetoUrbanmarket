@@ -9,11 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="prodstyle.css">
 </head>
 
 <body>
     <header>
-        <a href="#">
+        <a href="/index.html">
             <img src="/img/Screenshot_5.png" alt="Logo">
         </a>
         <input type="text" placeholder="Pesquisar...">
@@ -55,6 +57,29 @@
             <li><a href="#">Auto</a></li>
         </ul>
     </nav>
+
+    <main class="produto-container">
+
+        <div class="swiper produto-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/Catalog Itens/Whey.png" alt="Whey Protein"></div>
+                <div class="swiper-slide"><img src="../img/Catalog Itens/Whey.png" alt="Whey Protein 2"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="produto-info">
+            <h1>Whey Protein 900g</h1>
+            <p class="preco">R$ 79,99</p>
+            <p>4x de R$ 20,00 sem juros</p>
+            <button class="btn-comprar">Comprar agora</button>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="prodscript.js"></script>
 
     <footer>
         <div class="footerContainer">

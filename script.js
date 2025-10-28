@@ -17,20 +17,20 @@ new Swiper('.card-wrapper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  
+
   // BreakPoint Responsivo 
   breakpoints: {
     0: {
-        slidesPerView: 1,
-        centeredSlides: true
+      slidesPerView: 1,
+      centeredSlides: true
     },
     768: {
-        slidesPerView: 2,
-        centeredSlides: false
+      slidesPerView: 2,
+      centeredSlides: false
     },
     1024: {
-        slidesPerView: 3,
-        centeredSlides: false
+      slidesPerView: 3,
+      centeredSlides: false
     }
   }
 });
@@ -91,7 +91,7 @@ document.querySelectorAll('.formBox a').forEach(link => {
 });
 
 /* TEMA / MODO ESCURO */
-(function() {
+(function () {
   const btn = document.getElementById('toggleTheme');
   const storageKey = 'um-theme';
 
@@ -106,12 +106,12 @@ document.querySelectorAll('.formBox a').forEach(link => {
   }
 
   if (btn) {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       document.body.classList.toggle('dark');
       try {
         const isDark = document.body.classList.contains('dark');
         localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
-      } catch (e) {}
+      } catch (e) { }
       // Opcional: atualizar ícone/texto
       if (document.body.classList.contains('dark')) {
         btn.textContent = '☀️';
@@ -138,3 +138,33 @@ document.querySelectorAll('.formBox a').forEach(link => {
   window.addEventListener('scroll', updateScrolled, { passive: true });
   updateScrolled();
 })();
+
+
+
+// Mostrar popup de cupom ao entrar no site
+window.addEventListener("load", () => {
+  const cupomOverlay = document.getElementById("cupomOverlay");
+  const cupomPopup = document.getElementById("cupomPopup");
+  const fecharCupom = document.getElementById("fecharCupom");
+  const usarCupom = document.getElementById("usarCupom");
+
+  // Exibir popup
+  cupomOverlay.style.display = "block";
+  cupomPopup.style.display = "block";
+
+  // Fechar popup
+  fecharCupom.addEventListener("click", () => {
+    cupomOverlay.style.display = "none";
+    cupomPopup.style.display = "none";
+  });
+  cupomOverlay.addEventListener("click", () => {
+    cupomOverlay.style.display = "none";
+    cupomPopup.style.display = "none";
+  });
+
+  // Redirecionar para página de promoção
+  usarCupom.addEventListener("click", () => {
+    window.location.href = "login.html";
+    // ou por exemplo: "carrinho.html?cupom=DESCONTO10"
+  });
+});
