@@ -162,10 +162,10 @@ window.addEventListener("load", () => {
     cupomPopup.style.display = "none";
   });
 
-  // Redirecionar para página de promoção
   usarCupom.addEventListener("click", () => {
-    window.location.href = "login.html";
-    // ou por exemplo: "carrinho.html?cupom=DESCONTO10"
+    cupomOverlay.style.display = "none";
+    cupomPopup.style.display = "none";
+    abrirLogin.click();
   });
 });
 
