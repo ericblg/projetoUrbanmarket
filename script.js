@@ -169,6 +169,112 @@ window.addEventListener("load", () => {
   });
 });
 
+/* -------------------------- Via Cep Cadastro (JavaScript)-------------------------- */
+
+const cepInput = document.getElementById('cep');
+
+const logradouroInput = document.getElementById('logradouro');
+
+const bairroInput = document.getElementById('bairro');
+
+const cidadeInput = document.getElementById('cidade');
+
+
+
+// Função para buscar o CEP
+
+function buscarCEP() {
+
+    // Pega o valor do CEP e remove caracteres não numéricos
+
+    const cep = cepInput.value.replace(/\D/g, '');
+
+
+
+    // Se o campo CEP não estiver vazio
+
+    if (cep.length === 8) {
+
+        // Monta a URL da API do ViaCEP
+
+        const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+
+
+        // Faz a requisição à API
+
+        fetch(url)
+
+            .then(response => response.json()) // Converte a resposta para JSON
+
+            .then(dados => {
+
+                // Verifica se a resposta não é de erro (erro geralmente tem a chave 'erro' = true)
+
+                if (!dados.erro) {
+
+                    // Preenche os campos do formulário com os dados
+
+                    logradouroInput.value = dados.logradouro || '';
+
+                    bairroInput.value = dados.bairro || '';
+
+                    cidadeInput.value = dados.localidade || '';
+
+                } else {
+
+                    // Trata CEP não encontrado
+
+                    alert("CEP não encontrado.");
+
+                    limparEndereco();
+
+                }
+
+            })
+
+            .catch(error => {
+
+                // Trata erros de conexão ou outros
+
+                console.error('Erro na requisição ao ViaCEP:', error);
+
+                alert("Erro ao buscar CEP. Tente novamente.");
+
+                limparEndereco();
+
+            });
+
+    } else {
+
+        limparEndereco();
+
+    }
+
+}
+
+
+
+// Função para limpar os campos de endereço
+
+function limparEndereco() {
+
+    logradouroInput.value = '';
+
+    bairroInput.value = '';
+
+    cidadeInput.value = '';
+
+}
+
+
+
+// 2. Adiciona o evento de 'blur' (quando o campo perde o foco) no campo CEP
+
+cepInput.addEventListener('blur', buscarCEP);
+
+/* -------------------------- Via Cep Cadastro (JavaScprit) -------------------------- */
+
 
 
 

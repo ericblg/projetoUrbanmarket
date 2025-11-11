@@ -50,12 +50,73 @@
             <!-- Área de cadastro -->
             <div class="formBox" id="cadastroForm" style="display:none;">
                 <h2>Criar conta</h2>
-                <form>
-                    <input type="text" placeholder="Usuário" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Senha" required>
+                <span id="message"></span>
+                <!-- <form>
+                   <input type="text" placeholder="CPF" required>
+                    <input type="text" placeholder="Nome Completo" required>
+                    <input type="text" placeholder="Data de Nascimento" required>
+                    <input type="text" placeholder="E-mail" required>
+                    <input type="email" placeholder="Senha" required>
+                    <input type="text" id="cep" placeholder="Cep" class="input">
+                    <input type="text" id="endereço" placeholder="Endereço" class="input">
+                    <input type="text" id="número" placeholder="Número" class="input">
+                    <input type="text" id="bairro" placeholder="Bairro" class="input">
+                    <input type="text" id="cidade" placeholder="Cidade" class="input">
                     <button type="submit">Cadastrar</button>
-                </form>
+                </form> -->
+                <form>
+
+
+
+                    <label for="nome">Nome completo:</label>
+
+                    <input type="text" id="nome" name="nome" required pattern="[a-zA-Z\u00C0-\u00FF\s]+">
+
+
+
+
+                    <label for="dataNascimento">Data de Nascimento:</label>
+
+                    <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+
+
+                    <label for="email">E-mail:</label>
+
+                    <input type="email" id="email" name="email" required>
+
+
+
+                    <label for="senha">Senha:</label>
+
+                    <input type="password" id="senha" name="senha" minlength="6" required>
+
+
+
+                    <label for="cep">CEP:</label>
+
+                    <input type="text" id="cep" name="cep" maxlength="9" required>
+
+
+
+                    <label for="logradouro">Rua/Logradouro:</label>
+                    
+
+                    <input type="text" id="logradouro" name="logradouro" readonly> <label for="bairro">Bairro:</label>
+
+                    <input type="text" id="bairro" name="bairro" readonly>
+
+
+
+                    <label for="cidade">Cidade:</label>
+
+                    <input type="text" id="cidade" name="cidade" readonly>
+
+
+
+                  <button type="submit">Cadastrar</button>
+
+                 </form>
                 <p>Já tem conta? <a href="#" id="mostrarLogin">Entrar</a></p>
             </div>
         </div>
@@ -268,7 +329,7 @@
             <button id="usarCupom">Usar agora</button>
         </div>
     </div>
-
+    <script> src = "script.js"</script>
 </body>
 
 </html>
