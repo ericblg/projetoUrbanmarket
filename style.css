@@ -791,13 +791,34 @@ body.dark .form-note {
   text-align: left;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .loginContent {
+    width: 94vw;
     padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .formBox:not(.formBox-cadastro) {
+    text-align: left;
   }
 
   .form-section {
     padding: 12px;
+  }
+
+  .form-grid,
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cep-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-secundario {
+    width: 100%;
   }
 }
 
