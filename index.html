@@ -33,13 +33,13 @@
     <div id="overlay"></div>
 
     <div id="loginPopup">
-        <div class="loginContent">
-            <span id="fecharPopup">&times;</span>
+        <div class="loginContent" role="dialog" aria-modal="true" aria-labelledby="loginTitulo">
+            <span id="fecharPopup" aria-label="Fechar janela de login">&times;</span>
 
             <!-- Área de login -->
             <div class="formBox" id="loginForm">
-                <h2>Entrar</h2>
-                <form>
+                <h2 id="loginTitulo">Entrar</h2>
+                <form autocomplete="on">
                     <input type="text" placeholder="Usuário" required>
                     <input type="password" placeholder="Senha" required>
                     <button type="submit">Login</button>
@@ -48,13 +48,89 @@
             </div>
 
             <!-- Área de cadastro -->
-            <div class="formBox" id="cadastroForm" style="display:none;">
-                <h2>Criar conta</h2>
-                <form>
-                    <input type="text" placeholder="Usuário" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Senha" required>
+            <div class="formBox formBox-cadastro" id="cadastroForm" hidden>
+                <h2>Crie sua conta</h2>
+                <p class="form-intro">Preencha seus dados para criarmos seu perfil e agilizar as próximas compras.</p>
+                <form id="cadastroUsuario" autocomplete="on" novalidate>
+                    <div class="form-section">
+                        <h3>Dados pessoais</h3>
+                        <div class="form-grid form-grid-2">
+                            <label class="form-field">
+                                <span>Nome completo</span>
+                                <input type="text" id="cadastroNome" name="nome" placeholder="Seu nome" required>
+                            </label>
+                            <label class="form-field">
+                                <span>E-mail</span>
+                                <input type="email" id="cadastroEmail" name="email" placeholder="nome@email.com"
+                                    required>
+                            </label>
+                            <label class="form-field">
+                                <span>Senha</span>
+                                <input type="password" id="cadastroSenha" name="senha" placeholder="Crie uma senha forte"
+                                    required minlength="6">
+                            </label>
+                            <label class="form-field">
+                                <span>CPF</span>
+                                <input type="text" id="cadastroCpf" name="cpf" placeholder="000.000.000-00"
+                                    inputmode="numeric" maxlength="14" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Telefone</span>
+                                <input type="tel" id="cadastroTelefone" name="telefone" placeholder="(11) 99999-0000"
+                                    inputmode="tel" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Data de nascimento</span>
+                                <input type="date" id="cadastroNascimento" name="nascimento" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Endereço de entrega</h3>
+                        <div class="form-grid">
+                            <label class="form-field form-field-cep">
+                                <span>CEP</span>
+                                <div class="cep-input-group">
+                                    <input type="text" id="cadastroCep" name="cep" placeholder="00000-000"
+                                        inputmode="numeric" maxlength="9" required>
+                                    <button type="button" class="btn-secundario" id="buscarCep">Buscar</button>
+                                </div>
+                                <small class="cep-feedback" id="cepFeedback"></small>
+                            </label>
+                        </div>
+                        <div class="form-grid form-grid-2">
+                            <label class="form-field">
+                                <span>Logradouro</span>
+                                <input type="text" id="cadastroLogradouro" name="logradouro" placeholder="Rua, avenida"
+                                    required>
+                            </label>
+                            <label class="form-field">
+                                <span>Número</span>
+                                <input type="text" id="cadastroNumero" name="numero" placeholder="123" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Complemento</span>
+                                <input type="text" id="cadastroComplemento" name="complemento" placeholder="Apartamento, bloco">
+                            </label>
+                            <label class="form-field">
+                                <span>Bairro</span>
+                                <input type="text" id="cadastroBairro" name="bairro" placeholder="Seu bairro" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Cidade</span>
+                                <input type="text" id="cadastroCidade" name="cidade" placeholder="Sua cidade" required>
+                            </label>
+                            <label class="form-field">
+                                <span>Estado</span>
+                                <input type="text" id="cadastroEstado" name="estado" placeholder="UF" maxlength="2"
+                                    required>
+                            </label>
+                        </div>
+                    </div>
+
                     <button type="submit">Cadastrar</button>
+                    <p class="form-note">Ao continuar, você concorda com os termos de uso e privacidade.</p>
                 </form>
                 <p>Já tem conta? <a href="#" id="mostrarLogin">Entrar</a></p>
             </div>

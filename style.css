@@ -599,11 +599,15 @@ footer {
   background: #fff;
   padding: 30px;
   border-radius: 12px;
-  width: 300px;
-  text-align: center;
+  width: min(90vw, 640px);
+  text-align: left;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   position: relative;
   animation: fadeSlide 0.3s ease;
+}
+
+.loginContent.mostrando-cadastro {
+  width: min(92vw, 760px);
 }
 
 body.dark .loginContent {
@@ -611,17 +615,35 @@ body.dark .loginContent {
   color: #eaeaea;
 }
 
+.formBox {
+  width: 100%;
+}
+
+.formBox:not(.formBox-cadastro) {
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .formBox h2 {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 22px;
 }
 
-.formBox form input {
+.formBox form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formBox form input,
+.formBox form select {
   width: 100%;
   padding: 10px;
-  margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
+  background: #ffffff;
+  color: #222;
 }
 
 /* inputs do login/cadastro claros no tema claro */
@@ -630,13 +652,15 @@ body:not(.dark) .formBox form input {
   color: #222;
 }
 
-body.dark .formBox form input {
+body.dark .formBox form input,
+body.dark .formBox form select {
   background: #2a2a2a;
   border-color: #444;
   color: #eee;
 }
 
-.formBox form button {
+.formBox form button,
+.btn-secundario {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -649,8 +673,132 @@ body.dark .formBox form input {
   transition: 0.3s;
 }
 
-.formBox form button:hover {
+.formBox form button:hover,
+.btn-secundario:hover {
   background: #a00808;
+}
+
+.btn-secundario {
+  flex: 0 0 auto;
+  width: auto;
+  margin-top: 0;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.form-intro {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+body.dark .form-intro {
+  color: #bbb;
+}
+
+.form-section {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fafafa;
+}
+
+body.dark .form-section {
+  border-color: #333;
+  background: #161616;
+}
+
+.form-section h3 {
+  font-size: 16px;
+  color: #111;
+}
+
+body.dark .form-section h3 {
+  color: #f2f2f2;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.form-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.form-field span {
+  font-weight: 600;
+  color: #222;
+}
+
+body.dark .form-field span {
+  color: #eee;
+}
+
+.cep-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cep-input-group input {
+  flex: 1;
+}
+
+.cep-feedback {
+  display: block;
+  min-height: 16px;
+  font-size: 12px;
+  color: #666;
+}
+
+body.dark .cep-feedback {
+  color: #aaa;
+}
+
+.cep-feedback.error {
+  color: #c0392b;
+}
+
+.cep-feedback.success {
+  color: #1c7c40;
+}
+
+.form-note {
+  margin-top: -4px;
+  font-size: 12px;
+  color: #777;
+  text-align: left;
+}
+
+body.dark .form-note {
+  color: #bbb;
+}
+
+.formBox-cadastro p {
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  .loginContent {
+    padding: 20px;
+  }
+
+  .form-section {
+    padding: 12px;
+  }
 }
 
 .formBox p {
