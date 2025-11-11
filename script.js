@@ -273,7 +273,7 @@ function limparEndereco() {
 
 cepInput.addEventListener('blur', buscarCEP);
 
-/* -------------------------- Via Cep Cadastro (JavaScprit) -------------------------- */
+/* -------------------------- Via Cep Cadastro (JavaScprit) --------------------------= */
 
 
 
