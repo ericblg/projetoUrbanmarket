@@ -15,6 +15,10 @@ body {
   /* texto padrão no tema claro */
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /* --------------------------TEMA / MODO ESCURO-------------------------- */
 .theme-toggle {
   background: #f2f2f2;

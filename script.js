@@ -63,6 +63,7 @@ abrirLogin.addEventListener("click", (e) => {
   e.preventDefault();
   overlay.style.display = "block";
   loginPopup.style.display = "block";
+  document.body.classList.add("modal-open");
   mostrarFormulario("login");
 });
 
@@ -73,6 +74,7 @@ overlay.addEventListener("click", fecharTudo);
 function fecharTudo() {
   overlay.style.display = "none";
   loginPopup.style.display = "none";
+  document.body.classList.remove("modal-open");
   mostrarFormulario("login");
 }
 
