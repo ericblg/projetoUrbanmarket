@@ -38,11 +38,6 @@ body.dark {
   color: #eaeaea;
 }
 
-body.dark header input {
-  background: #1f1f1f;
-  color: #eee;
-  border-color: #3a3a3a;
-}
 
 body.dark .theme-toggle {
   background: #2a2a2a;
@@ -97,9 +92,8 @@ body.dark header input::placeholder {
 }
 
 body.dark header input {
-  background: #1f1f1f;
-  color: #eee;
-  border-color: #3a3a3a;
+  background: white;
+  border-color: black;
 }
 
 .icones-header {
