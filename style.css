@@ -628,7 +628,7 @@ body:not(.dark) .formBox form input {
 body.dark .formBox form input {
   background: white;
   border-color: #444;
-  color: #eee;
+  color: black;
 }
 
 .formBox form button {
