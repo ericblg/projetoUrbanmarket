@@ -34,12 +34,6 @@ body.dark {
   color: #eaeaea;
 }
 
-body.dark header input {
-  background: #1f1f1f;
-  color: #eee;
-  border-color: #3a3a3a;
-}
-
 body.dark .theme-toggle {
   background: #2a2a2a;
   border-color: #3a3a3a;
@@ -93,8 +87,8 @@ body.dark header input::placeholder {
 }
 
 body.dark header input {
-  background: #1f1f1f;
-  color: #eee;
+  background: white;
+  color: black;
   border-color: #3a3a3a;
 }
 
@@ -375,7 +369,8 @@ body.dark .card-list .card-link .card-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50; /* força a ficar acima */
+  z-index: 50;
+  /* força a ficar acima */
 
 }
 
@@ -631,7 +626,7 @@ body:not(.dark) .formBox form input {
 }
 
 body.dark .formBox form input {
-  background: #2a2a2a;
+  background: white;
   border-color: #444;
   color: #eee;
 }
@@ -910,9 +905,9 @@ body.dark .carrinho-meta {
 }
 
 body.dark .qtd-input {
-  background: #2a2a2a;
+  background: white;
   border-color: #444;
-  color: #eee;
+  color: black;
 }
 
 body.dark .link-remover {
