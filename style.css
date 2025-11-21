@@ -1047,3 +1047,171 @@ body.dark .produto-titulo {
 body.dark .produto-preco {
   color: #fafafa;
 }
+
+/* ===========================================================
+   RESPONSIVIDADE
+   =========================================================== */
+
+
+/* -------------------------------
+   ATÉ 1024px (TABLET)
+   -------------------------------*/
+@media (max-width: 1024px) {
+
+    .grid-produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header input {
+        width: 70%;
+    }
+
+    nav ul li ul {
+        top: 40px;
+    }
+}
+
+
+
+/* -------------------------------
+   ATÉ 768px (MOBILE)
+   -------------------------------*/
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 10px;
+    }
+
+    header input {
+        width: 90%;
+    }
+
+    .icones-header {
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    /* NAV */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li ul {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* PRODUTOS */
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    /* POPUP */
+    #loginPopup {
+        width: 90%;
+    }
+
+    .formBox input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* SLIDER */
+    .card-image {
+        width: 140px;
+    }
+
+    /* FOOTER */
+    .footerContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+
+
+/* -------------------------------
+   ATÉ 480px (MOBILE PEQUENO)
+   -------------------------------*/
+@media (max-width: 480px) {
+
+    header img {
+        width: 130px;
+    }
+
+    header input {
+        width: 100%;
+        font-size: 14px;
+    }                
+
+    .icones-header img {
+        width: 22px;
+    }
+
+    /* GRID vira 1 coluna */
+    .grid-produtos {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .produto-img {
+        width: 80%;
+        margin: auto;
+    }
+
+    #loginPopup {
+        padding: 15px;
+    }
+
+    .formBox input {
+        font-size: 13px;
+    }
+
+    .card-image {
+        width: 110px;
+    }
+}
+
+
+
+/* -------------------------------
+   4) ATÉ 380px (EXTRA SMALL)
+   -------------------------------*/
+@media (max-width: 380px) {
+
+    header {
+        padding: 8px;
+    }
+
+    header input {
+        font-size: 12px;
+    }
+
+    .icones-header img {
+        width: 20px;
+    }
+
+    .produto-titulo {
+        font-size: 14px;
+    }
+
+    .produto-preco {
+        font-size: 15px;
+    }
+
+    .formBox input {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    #loginPopup {
+        width: 95%;
+    }
+}
