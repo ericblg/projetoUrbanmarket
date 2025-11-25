@@ -354,6 +354,7 @@ body.dark .card-list .card-item .card-link {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 .card-list .card-link .card-title {
@@ -1136,7 +1137,9 @@ body.dark .produto-preco {
 
     /* SLIDER */
     .card-image {
-        width: 140px;
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
     }
 
     /* FOOTER */
@@ -1173,8 +1176,8 @@ body.dark .produto-preco {
     }
 
     .produto-img {
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        margin: 0;
     }
 
     #loginPopup {
@@ -1186,7 +1189,9 @@ body.dark .produto-preco {
     }
 
     .card-image {
-        width: 110px;
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
     }
 }
 
