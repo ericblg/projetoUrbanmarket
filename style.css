@@ -47,7 +47,7 @@ header {
   justify-content: space-between;
   padding: 0 20px;
   height: 80px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 15px;
   background: #ffffff;
   border-bottom: 1px solid #eaeaea;
@@ -62,10 +62,12 @@ header img {
 
 header input {
   position: static;
-  width: 100%;
+  flex: 1 1 320px;
+  min-width: 0;
+  width: auto;
   max-width: 400px;
   padding: 8px;
-  margin: 0 auto;
+  margin: 0;
   background: #ffffff;
   color: #222;
   border: 1px solid #ccc;
@@ -95,6 +97,8 @@ body.dark header input {
 .icones-header {
   display: flex;
   gap: 15px;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .icones-header img {
@@ -1084,15 +1088,22 @@ body.dark .produto-preco {
         gap: 10px;
         height: auto;
         padding: 10px;
+        align-items: center;
     }
 
     header input {
-        width: 90%;
+        order: 3;
+        width: 100%;
+        max-width: none;
+        flex: 0 0 auto;
     }
 
     .icones-header {
         gap: 10px;
         margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     /* NAV */
