@@ -35,6 +35,54 @@ new Swiper('.card-wrapper', {
   }
 });
 
+// MENU RESPONSIVO
+(function () {
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('mainNavList');
+  const mobileBreakpoint = 900;
+
+  function closeSubmenus() {
+    document.querySelectorAll('nav li.open').forEach((item) => {
+      item.classList.remove('open');
+    });
+  }
+
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navList.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      if (!isOpen) {
+        closeSubmenus();
+      }
+    });
+  }
+
+  document.querySelectorAll('nav li > a').forEach((link) => {
+    const parent = link.parentElement;
+    const submenu = parent ? parent.querySelector('ul') : null;
+    if (!submenu) return;
+
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= mobileBreakpoint) {
+        e.preventDefault();
+        const alreadyOpen = parent.classList.contains('open');
+        closeSubmenus();
+        parent.classList.toggle('open', !alreadyOpen);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > mobileBreakpoint && navList) {
+      navList.classList.remove('is-open');
+      if (navToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+      closeSubmenus();
+    }
+  });
+})();
+
 /* LOGIN */
 
 const abrirLogin = document.getElementById("abrirLogin");

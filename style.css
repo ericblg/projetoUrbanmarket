@@ -137,6 +137,7 @@ body.dark.scrolled header {
 
   .icones-header {
     margin-top: 10px;
+    justify-content: center;
   }
 }
 
@@ -152,6 +153,31 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-toggle {
+  display: none;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f7f7f7;
+  color: #222;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid #7c0606;
+  outline-offset: 3px;
+}
+
+body.dark .nav-toggle {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+  color: #eaeaea;
 }
 
 nav ul {
@@ -164,6 +190,7 @@ nav ul {
   gap: 16px;
   width: 100%;
   flex-wrap: wrap;
+  transition: max-height 0.25s ease;
 }
 
 nav li {
@@ -221,6 +248,15 @@ body.dark nav a:hover {
   background: #2a2a2a;
 }
 
+nav li.open > a {
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+body.dark nav li.open > a {
+  background: #2a2a2a;
+}
+
 nav ul ul {
   display: none;
   position: absolute;
@@ -247,24 +283,58 @@ nav li:hover ul {
   display: flex;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   nav ul {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 10px;
-    justify-content: flex-start;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+  }
+
+  nav ul.is-open {
+    display: flex;
   }
 
   nav li {
-    width: auto;
+    width: 100%;
+  }
+
+  nav a {
+    text-align: left;
+    border-radius: 8px;
   }
 
   nav ul ul {
     position: static;
     transform: none;
-    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 10px 6px;
+    gap: 4px;
+  }
+
+  nav ul ul a {
+    padding-left: 18px;
+  }
+
+  nav li.open > ul {
+    display: flex;
+  }
+
+  nav li:hover ul {
+    display: none;
   }
 }
 
@@ -467,6 +537,7 @@ body.dark .card-wrapper .swiper-slide-button {
   padding: 30px;
   border-radius: 12px;
   width: 320px;
+  max-width: 92vw;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   z-index: 10000;
@@ -506,6 +577,12 @@ body.dark #cupomPopup {
   right: 15px;
   font-size: 22px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #cupomPopup {
+    padding: 22px;
+  }
 }
 
 /* --------------------------RODAPÉ-------------------------- */
@@ -595,6 +672,7 @@ footer {
   padding: 30px;
   border-radius: 12px;
   width: 300px;
+  max-width: 92vw;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   position: relative;
