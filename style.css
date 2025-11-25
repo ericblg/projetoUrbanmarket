@@ -1167,6 +1167,7 @@ body.dark .produto-preco {
 
     .icones-header img {
         width: 22px;
+        height: 22px;
     }
 
     /* GRID vira 1 coluna */
@@ -1212,6 +1213,7 @@ body.dark .produto-preco {
 
     .icones-header img {
         width: 20px;
+        height: 20px;
     }
 
     .produto-titulo {
