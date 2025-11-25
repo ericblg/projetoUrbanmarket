@@ -42,13 +42,13 @@ body.dark .theme-toggle {
 
 /* --------------------------CABEÇALHO-------------------------- */
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "logo search icons";
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  height: 80px;
-  flex-wrap: wrap;
-  gap: 15px;
+  padding: 12px 20px;
+  min-height: 80px;
+  gap: 16px;
   background: #ffffff;
   border-bottom: 1px solid #eaeaea;
   position: sticky;
@@ -56,20 +56,28 @@ header {
   z-index: 1000;
 }
 
+header>a {
+  grid-area: logo;
+  display: inline-flex;
+  align-items: center;
+}
+
 header img {
   height: 40px;
+  display: block;
 }
 
 header input {
-  position: static;
+  grid-area: search;
   width: 100%;
-  max-width: 400px;
-  padding: 8px;
-  margin: 0 auto;
+  max-width: 520px;
+  padding: 8px 10px;
+  margin: 0;
   background: #ffffff;
   color: #222;
   border: 1px solid #ccc;
   border-radius: 8px;
+  min-width: 200px;
 }
 
 header input::placeholder {
@@ -93,8 +101,17 @@ body.dark header input {
 }
 
 .icones-header {
+  grid-area: icons;
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 15px;
+  flex-shrink: 0;
+}
+
+.icones-header a {
+  display: inline-flex;
+  align-items: center;
 }
 
 .icones-header img {
@@ -124,20 +141,28 @@ body.dark.scrolled header {
 
 @media screen and (max-width: 768px) {
   header {
-    flex-direction: column;
-    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "icons"
+      "search";
+    justify-items: center;
     padding: 15px 20px;
+    row-gap: 12px;
+  }
+
+  header>a {
+    justify-self: center;
   }
 
   header input {
-    order: 3;
     width: 100%;
-    margin-top: 10px;
+    max-width: 520px;
   }
 
   .icones-header {
-    margin-top: 10px;
     justify-content: center;
+    width: 100%;
   }
 }
 
