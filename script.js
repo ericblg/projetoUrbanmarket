@@ -41,9 +41,23 @@ new Swiper('.card-wrapper', {
   const navList = document.getElementById('mainNavList');
   const mobileBreakpoint = 900;
 
+  function closeMenu() {
+    if (navList) {
+      navList.classList.remove('is-open');
+    }
+    if (navToggle) {
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    closeSubmenus();
+  }
+
   function closeSubmenus() {
     document.querySelectorAll('nav li.open').forEach((item) => {
       item.classList.remove('open');
+      const trigger = item.querySelector(':scope > a');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -68,18 +82,48 @@ new Swiper('.card-wrapper', {
         const alreadyOpen = parent.classList.contains('open');
         closeSubmenus();
         parent.classList.toggle('open', !alreadyOpen);
+        link.setAttribute('aria-expanded', String(!alreadyOpen));
       }
     });
+
+    // Responde ao toque imediatamente (evita duplo toque em alguns navegadores)
+    link.addEventListener('touchstart', (e) => {
+      if (window.innerWidth <= mobileBreakpoint) {
+        e.preventDefault();
+        const alreadyOpen = parent.classList.contains('open');
+        closeSubmenus();
+        parent.classList.toggle('open', !alreadyOpen);
+        link.setAttribute('aria-expanded', String(!alreadyOpen));
+      }
+    }, { passive: false });
   });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > mobileBreakpoint && navList) {
-      navList.classList.remove('is-open');
-      if (navToggle) {
-        navToggle.setAttribute('aria-expanded', 'false');
-      }
-      closeSubmenus();
+      closeMenu();
     }
+  });
+
+  // Fechar ao clicar fora do nav no mobile
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > mobileBreakpoint) return;
+    const insideNav = e.target.closest('nav');
+    const isToggle = navToggle && navToggle.contains(e.target);
+    if (!insideNav && !isToggle) {
+      closeMenu();
+    }
+  });
+
+  // Em links folha (sem submenu), fecha o menu ap��s o clique
+  document.querySelectorAll('nav li:not(.open) > a').forEach((link) => {
+    const parent = link.parentElement;
+    const submenu = parent ? parent.querySelector('ul') : null;
+    if (submenu) return;
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= mobileBreakpoint) {
+        closeMenu();
+      }
+    });
   });
 })();
 
