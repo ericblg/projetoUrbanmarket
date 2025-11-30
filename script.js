@@ -278,3 +278,38 @@ cepInput.addEventListener('blur', buscarCEP);
 
 
 
+/* ==========================================================
+   SLIDER ESTILO FACEBOOK MARKETPLACE
+   ========================================================== */
+
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.querySelectorAll(".thumb");
+const btnNext = document.getElementById("nextBtn");
+const btnPrev = document.getElementById("prevBtn");
+
+if (mainImage && thumbs.length > 0) {
+
+    let index = 0;
+
+    function updateImage(i) {
+        index = i;
+        mainImage.src = thumbs[i].src;
+
+        thumbs.forEach(t => t.classList.remove("active"));
+        thumbs[i].classList.add("active");
+    }
+
+    thumbs.forEach((thumb, i) => {
+        thumb.addEventListener("click", () => updateImage(i));
+    });
+
+    btnNext.addEventListener("click", () => {
+        index = (index + 1) % thumbs.length;
+        updateImage(index);
+    });
+
+    btnPrev.addEventListener("click", () => {
+        index = (index - 1 + thumbs.length) % thumbs.length;
+        updateImage(index);
+    });
+}

@@ -1233,3 +1233,218 @@ body.dark .produto-preco {
         width: 95%;
     }
 }
+
+/* ==========================================================
+   SLIDE TIPO FACEBOOK MARKETPLACE
+   ========================================================== */
+
+.produto-slider {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+.slider-main {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.slider-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Setas */
+.slider-main .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px 15px;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    transition: 0.2s;
+    z-index: 20;
+}
+
+.slider-main .nav:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.slider-main .prev { left: 12px; }
+.slider-main .next { right: 12px; }
+
+/* Miniaturas */
+.slider-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.slider-thumbs img.thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.slider-thumbs img.thumb:hover {
+    opacity: 1;
+}
+
+.slider-thumbs img.thumb.active {
+    opacity: 1;
+    border-color: #007bff;
+}
+
+/* DARK MODE */
+body.dark .slider-thumbs img.thumb.active {
+    border-color: #00c8ff;
+}
+
+body.dark .slider-main {
+    background: #111;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .slider-main {
+        height: 330px;
+    }
+    .slider-thumbs img.thumb {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-main {
+        height: 260px;
+    }
+    .slider-thumbs img.thumb {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* ==========================================================
+   PRODUTO LADO A LADO (SLIDE + INFO)
+   ========================================================== */
+
+.produto-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+    margin: 30px auto;
+    align-items: flex-start;
+}
+
+/* Caixa das informações */
+.produto-info {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+body.dark .produto-info {
+    background: #1e1e1e;
+    border-color: #444;
+}
+
+/* Título */
+.produto-nome {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Preço */
+.produto-preco2 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #111;
+}
+
+body.dark .produto-preco2 {
+    color: #f5f5f5;
+}
+
+/* Badge frete */
+.produto-frete {
+    display: inline-block;
+    background: #00a650;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+/* Parcelamento */
+.produto-parcela2 {
+    font-size: 15px;
+    color: #444;
+    margin-top: 12px;
+}
+
+body.dark .produto-parcela2 {
+    color: #bbb;
+}
+
+/* Preço à vista */
+.produto-vista2 {
+    font-size: 15px;
+    color: #00a650;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* BOTÃO COMPRAR */
+.btn-comprar {
+    width: 100%;
+    padding: 14px;
+    background: #7c0606;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.btn-comprar:hover {
+    background: #a00808;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .produto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto-info {
+        width: 100%;
+    }
+}
+
